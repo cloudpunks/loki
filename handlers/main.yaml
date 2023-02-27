@@ -1,0 +1,12 @@
+---
+- name: Restart loki
+  systemd:
+    name: loki
+    state: restarted
+    daemon_reload: yes
+
+- name: Restart loki-oauth2
+  systemd:
+    name: loki-oauth2
+    state: restarted
+    daemon_reload: yes
