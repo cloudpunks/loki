@@ -15,7 +15,6 @@ ExecStartPre=/usr/bin/docker pull {{ loki_image }}
 ExecStart=/usr/bin/docker run --rm \
   --name %p \
   --hostname %p \
-  --env-file /etc/default/loki \
 {% if loki_network | default(False) %}
   --network {{ loki_network }} \
 {% endif %}
